@@ -47,9 +47,11 @@ export default function Container() {
       throw new Error('Please add a new greeting string.')
     }
 
+    const currentDate = new Date().toISOString().slice(0, 10);
+
     const transactionId = await fcl.mutate({
       cadence: UpdateHelloWorld,
-      args: (arg, t) => [arg(userGreetingInput, t.String)],
+      args: (arg, t) => [arg(userGreetingInput + " - " + currentDate, t.String)],
     })
 
     setLastTransactionId(transactionId)
