@@ -1,17 +1,23 @@
+import * as fcl from '@onflow/fcl'
 import styles from '../styles/Home.module.css'
+import elementStyles from '../styles/Elements.module.css'
 
 export default function Links() {
+  const handleLogin = () => {
+    fcl.authenticate()
+  }
+
   return (
-    /* should this be a button rather than div?  Does this affect accessibility/screen readers? */
     <div className={styles.grid}>
-      <a
-        href="https://developers.flow.com/tools/fcl-js/tutorials/flow-app-quickstart"
-        target="_blank"
-        rel="noreferrer"
-        className={styles.card}>
-          {/* connect logic to this button */}
-        <h2>Log In With Wallet</h2>
-      </a>
+      <button
+        onClick={handleLogin}
+        className={elementStyles.button}>
+        Log In With Wallet
+      </button>
     </div>
   )
 }
+// the css for this page has changed.  likely due to button element rather than anchor element and
+//  nesting/descendent changes.
+
+// also omit logic and actual button from nav
