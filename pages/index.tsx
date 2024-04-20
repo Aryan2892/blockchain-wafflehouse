@@ -11,18 +11,18 @@ export default function Home() {
     <div className={styles.container}>
 
       <Head>
-        <title>FCL Next Scaffold</title>
-        <meta name="description" content="FCL Next Scaffold for the Flow Blockchain" />
+        <title>Attencance App</title>
+        <meta name="description" content="blockchain attendance checker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://developers.flow.com/tools/fcl-js">FCL</a> Next Scaffold
+          Blockchain WaffleHouse
         </h1>
 
         <p className={styles.description}>
-          For the Flow Blockchain
+          Attendance Keeping Application
         </p>
 
         {loggedIn && <Container />}
