@@ -11,7 +11,7 @@ export default function Home() {
     <div className={styles.container}>
 
       <Head>
-        <title>Attencance App</title>
+        <title>Attendance App</title>
         <meta name="description" content="blockchain attendance checker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
