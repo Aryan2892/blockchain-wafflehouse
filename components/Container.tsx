@@ -63,6 +63,7 @@ export default function Container() {
     })
 
     setLastTransactionId(transactionId)
+    setUserGreetingInput('')
   }
   
   const openExplorerLink = (transactionId, network) => window.open(createExplorerTransactionLink({ network, transactionId }), '_blank')

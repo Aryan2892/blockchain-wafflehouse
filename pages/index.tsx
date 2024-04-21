@@ -10,24 +10,27 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-
       <Head>
         <title>Attendance App</title>
         <meta name="description" content="blockchain attendance checker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
+        {!loggedIn && (
+          <img src='/favicon.ico' alt="Favicon" style={{ width: '250px', height: '250px', marginTop: '100px', marginBottom: '0' }}/>
+        )}
         <h1 className={styles.title}>
           Blockchain WaffleHouse
         </h1>
 
-        <p className={styles.description}>
-          Attendance Keeping Application
-        </p>
+        {!loggedIn && (
+          <p className={styles.description}>
+          Attendance Keeping Application Built on the Flow Blockchain
+          </p>
+        )}
+        
 
         {loggedIn && <Container />}
-
         <Footer />
       </main>
     </div>
