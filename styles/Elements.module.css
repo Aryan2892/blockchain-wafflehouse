@@ -1,0 +1,24 @@
+.button {
+  padding: 18px;
+  background: #00EC82;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #00EC82;
+  background-color: #fafafa;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.input {
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.link {
+  cursor: pointer;
+  color: #00EC82;
+}
