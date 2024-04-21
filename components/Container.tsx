@@ -6,7 +6,7 @@ import elementStyles from '../styles/Elements.module.css'
 import containerStyles from '../styles/Container.module.css'
 import useConfig from '../hooks/useConfig'
 import { createExplorerTransactionLink } from '../helpers/links'
-import studentsData from './students.json';
+import studentsData from '../students.json';
 
 export default function Container() {
   const [chainGreeting, setChainGreeting] = useState<string[]>()
