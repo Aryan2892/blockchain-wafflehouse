@@ -7,6 +7,7 @@ import containerStyles from '../styles/Container.module.css'
 import useConfig from '../hooks/useConfig'
 import { createExplorerTransactionLink } from '../helpers/links'
 import studentsData from '../students.json';
+import copyIcon from './copy-icon.png';
 
 export default function Container() {
   const [chainGreeting, setChainGreeting] = useState<string[]>()
@@ -73,8 +74,10 @@ export default function Container() {
       <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', gap: '5px', marginBottom: '5px' }}>
         {studentsData.map((student, index) => (
           <React.Fragment key={index}>
-            <p style={{ textAlign: 'left', margin: '0' }}>{student}</p>
-            <button onClick={() => copyToClipboard(student)}>Copy</button>
+            <p style={{ textAlign: 'left', margin: '0', marginRight: '5px' }}>{student}</p>
+            <button onClick={() => copyToClipboard(student)}>
+              <img src={copyIcon.src} alt="Copy" style={{ width: '16px', height: '16px' }} />
+            </button>
           </React.Fragment>
         ))}
       </div>
