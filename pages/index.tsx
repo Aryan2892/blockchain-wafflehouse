@@ -26,9 +26,9 @@ export default function Home() {
           Attendance Keeping Application
         </p>
 
-        {loggedIn && <Container />}
-
         <Links />
+
+        {loggedIn && <Container />}
 
         <Footer />
       </main>

@@ -1,6 +1,6 @@
 .button {
-  padding: 18px;
-  background: var(--primary-color);
+  padding: 12px;
+  background: var(--accent-color);
   font-size: 20px;
   border-radius: 12px;
   cursor: pointer;
@@ -8,7 +8,7 @@
 
 .button:hover {
   border-color: var(--primary-color);
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
