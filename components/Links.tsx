@@ -17,7 +17,3 @@ export default function Links() {
     </div>
   )
 }
-// the css for this page has changed.  likely due to button element rather than anchor element and
-//  nesting/descendent changes.
-
-// also omit logic and actual button from nav
