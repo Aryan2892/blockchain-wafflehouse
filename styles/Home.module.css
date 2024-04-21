@@ -30,7 +30,7 @@
 }
 
 .title a {
-  color: black;
+  color: var(--text-color);
   background-color: red;
   text-decoration: none;
 }
@@ -59,7 +59,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: var(--primary-color);
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -90,8 +90,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #00EC82;
-  border-color: #00EC82;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .card h2 {

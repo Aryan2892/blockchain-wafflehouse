@@ -6,7 +6,7 @@
   padding: 2em;
   display: flex;
   justify-content: right;
-  background-color:  #00EC82;
+  background-color:  var(--primary-color);
 }
 
 .address {

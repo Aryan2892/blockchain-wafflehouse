@@ -1,14 +1,14 @@
 .button {
   padding: 18px;
-  background: #00EC82;
+  background: var(--primary-color);
   font-size: 20px;
   border-radius: 12px;
   cursor: pointer;
 }
 
 .button:hover {
-  border-color: #00EC82;
-  background-color: #fafafa;
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -20,5 +20,5 @@
 
 .link {
   cursor: pointer;
-  color: #00EC82;
+  color: var(--primary-color);
 }
