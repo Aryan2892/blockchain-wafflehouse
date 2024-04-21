@@ -1,3 +1,9 @@
+:root {
+  --text-color: black;
+  --primary-color: #00EC82;
+  --secondary-color: #fafafa;
+}
+
 html,
 body {
   padding: 0;
