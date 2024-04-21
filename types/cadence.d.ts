@@ -1,4 +1,4 @@
 declare module "*.cdc" {
-  const content: string;
+  var content: string[];
   export default content;
 }

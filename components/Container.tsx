@@ -1,14 +1,16 @@
 import * as fcl from '@onflow/fcl'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReadHelloWorld from '../cadence/scripts/ReadHelloWorld.cdc'
 import UpdateHelloWorld from '../cadence/transactions/UpdateHelloWorld.cdc'
 import elementStyles from '../styles/Elements.module.css'
 import containerStyles from '../styles/Container.module.css'
 import useConfig from '../hooks/useConfig'
 import { createExplorerTransactionLink } from '../helpers/links'
+import studentsData from '../students.json';
+import copyIcon from './copy-icon.png';
 
 export default function Container() {
-  const [chainGreeting, setChainGreeting] = useState('?')
+  const [chainGreeting, setChainGreeting] = useState<string[]>()
   const [userGreetingInput, setUserGreetingInput] = useState('')
   const [lastTransactionId, setLastTransactionId] = useState<string>()
   const [transactionStatus, setTransactionStatus] = useState<number>()
@@ -16,6 +18,12 @@ export default function Container() {
 
   const isEmulator = network => network !== 'mainnet' && network !== 'testnet'
   const isSealed = statusCode => statusCode === 4 // 4: 'SEALED'
+
+  const copyToClipboard = (name: string) => {
+    navigator.clipboard.writeText(name)
+      .then(() => console.log(`Copied ${name} to clipboard`))
+      .catch(error => console.error('Error copying to clipboard:', error));
+  };
 
   useEffect(() => {
     if (lastTransactionId) {
@@ -55,6 +63,7 @@ export default function Container() {
     })
 
     setLastTransactionId(transactionId)
+    setUserGreetingInput('')
   }
   
   const openExplorerLink = (transactionId, network) => window.open(createExplorerTransactionLink({ network, transactionId }), '_blank')
@@ -62,22 +71,30 @@ export default function Container() {
   return (
     <div className={containerStyles.container}>
       <div className={containerStyles.spacing}>
-        <h3>Student List:</h3>
-        <p style={{ textAlign: "left" }}>Mohamad Häusler</p>
-        <p style={{ textAlign: "left" }}>Kristina Poirier</p>
-        <p style={{ textAlign: "left" }}>Frigg Allen</p>
-        <p style={{ textAlign: "left" }}>Angélique Kjær</p>
-        <p style={{ textAlign: "left" }}>Rayna Russo</p>
-        <p style={{ textAlign: "left" }}>Lynn Warren</p>
-        <p style={{ textAlign: "left" }}>Rolland Seymour</p>
-        <p style={{ textAlign: "left" }}>Kristine Faulkner</p>
-        <p style={{ textAlign: "left" }}>Makenzie Yoxall</p>
-        <p style={{ textAlign: "left" }}>Raphael John</p>
+      <h3>Student List:</h3>
+      <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', gap: '5px', marginBottom: '5px' }}>
+        {studentsData.map((student, index) => (
+          <React.Fragment key={index}>
+            <p style={{ textAlign: 'left', margin: '0', marginRight: '5px' }}>{student}</p>
+            <button onClick={() => copyToClipboard(student)}>
+              <img src={copyIcon.src} alt="Copy" style={{ width: '16px', height: '16px' }} />
+            </button>
+          </React.Fragment>
+        ))}
       </div>
+    </div>
       <div>
         <h2>Query the Attendance Chain</h2>  
         <button onClick={queryChain} className={elementStyles.button}>Query</button>
-        <h4>Student Name(s) on Chain: { chainGreeting }</h4>
+        <h4>Student Name(s) on Chain: </h4>
+        {chainGreeting ? (
+          chainGreeting.slice().reverse().map((name, index) => (
+            <div key={index}>{name}</div>
+          ))
+        ) : (
+          <div></div>
+        )}
+
       </div>
       <hr />
       <div>

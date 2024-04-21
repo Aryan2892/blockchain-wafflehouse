@@ -1,25 +1,38 @@
-This is a scaffold for an FCL NextJS Dapp on the Flow Blockchain.
+# <Blockchain Wafflehouse>
 
-## Features Provided
+## Description
+Blockchain Wafflehouse (BW) is the premier decentralized application for generating and storing student attendance data.  BW promotes data integrity by utilizing the [Flow]([https://flow.com/](https://flow.com/)) blockchain and Cadence smart contracts to log and store immutable student attendance data.
 
-- FCL setup and configuration
-- "flow dev" integration for automatic local account creation and contract deployment
-- Wallet Discovery (including Dev Wallet on Emulator)
-- CLI private key separation for security
-- Flow.json loading for contract placeholders
-- Authentication
-- CDC file loader
-- Custom hooks
-- Deployment 
+This application was developed during the April 2024 Web3Apps Hackathon hosted by Major League Hacking (MLH).
 
-## Featues TODO
+## Table of Contents
+-  [Features](#features)
 
-- Mainnet deployment
-- JS Testing
+-  [Installation](#installation)
 
-## Running the App
+-  [Usage](#usage)
 
-First run:
+-  [Credits](#credits)
+
+-  [Architecture](#architecture)
+
+## Features
+
+- Data storage on the Flow blockchain
+- Cadence Smart contracts
+- Secure login through Flow Wallet
+
+## Installation
+
+Git clone the main branch from our repository. 
+
+git clone https://github.com/Aryan2892/blockchain-wafflehouse.git
+
+## Usage
+
+Use the package manager npm to install our app.
+(for the first run)
+npm install
 
 ```
 npm install
@@ -67,3 +80,16 @@ Whenever you need to redeploy changed contracts to Testnet while seeing the diff
 ```
 npm run dev:testnet:update
 ```
+
+Successful installation and login into the Blockchain Wafflehouse module should yield a similar UI:
+![](./assets/images/bw-screenshot.png)
+
+## Credit 
+
+A lot of our inspiration came from all over the internet as we were looking for examples of Flow projects. We found a tutorial that used a blockchain method to log a greeting and then query the last logged greeting, whether that was "hello world", "hi", "welcome", etc. We changed it to match our idea of an attendance app and made it unique to our project goal.
+-This is the link to that online flow tutorial: https://developers.flow.com/build/guides/flow-app-quickstart
+
+## Architecture
+
+The diagram below provides an overview on what we have built
+![](./docs/blockchain-Wafflehouse.png)
