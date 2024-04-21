@@ -6,16 +6,11 @@ pub contract HelloWorld {
     self.greeting.append(newGreeting)
   }
   
-  access(all) fun getLastXGreetings(numGreetings: Int): [String] {
-    if numGreetings >= self.greeting.length {
-      return self.greeting
-    } else {
-      let startIndex = self.greeting.length - numGreetings
-      return self.greeting.slice(from: startIndex, upTo: self.greeting.length)
-    }
+  access(all) fun getGreetings(): [String] {
+    return self.greeting
   }
 
   init() {
-    self.greeting = ["Hello, World!"]
+    self.greeting = []
   }
 }

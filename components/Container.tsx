@@ -8,7 +8,7 @@ import useConfig from '../hooks/useConfig'
 import { createExplorerTransactionLink } from '../helpers/links'
 
 export default function Container() {
-  const [chainGreeting, setChainGreeting] = useState('?')
+  const [chainGreeting, setChainGreeting] = useState<string[]>()
   const [userGreetingInput, setUserGreetingInput] = useState('')
   const [lastTransactionId, setLastTransactionId] = useState<string>()
   const [transactionStatus, setTransactionStatus] = useState<number>()
@@ -77,7 +77,15 @@ export default function Container() {
       <div>
         <h2>Query the Attendance Chain</h2>  
         <button onClick={queryChain} className={elementStyles.button}>Query</button>
-        <h4>Student Name(s) on Chain: { chainGreeting }</h4>
+        <h4>Student Name(s) on Chain: </h4>
+        {chainGreeting ? (
+          chainGreeting.map((name, index) => (
+            <div key={index}>{name}</div>
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
+
       </div>
       <hr />
       <div>
