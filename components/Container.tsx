@@ -63,27 +63,27 @@ export default function Container() {
     <div className={containerStyles.container}>
       <div>
         <h3>Student List:</h3>
-        <ol>
-          <li>Mohamad Häusler</li>
-          <li>Kristina Poirier</li>
-          <li>Frigg Allen</li>
-          <li>Angélique Kjær</li>
-          <li>Rayna Russo</li>
-          <li>Lynn Warren</li>
-          <li>Rolland Seymour</li>
-          <li>Kristine Faulkner</li>
-          <li>Makenzie Yoxall</li>
-          <li>Raphael John</li>
-        </ol>
+        <ul style={{ textAlign: "left" }}>
+          <li style={{ listStyleType: "none" }}>Mohamad Häusler</li>
+          <li style={{ listStyleType: "none" }}>Kristina Poirier</li>
+          <li style={{ listStyleType: "none" }}>Frigg Allen</li>
+          <li style={{ listStyleType: "none" }}>Angélique Kjær</li>
+          <li style={{ listStyleType: "none" }}>Rayna Russo</li>
+          <li style={{ listStyleType: "none" }}>Lynn Warren</li>
+          <li style={{ listStyleType: "none" }}>Rolland Seymour</li>
+          <li style={{ listStyleType: "none" }}>Kristine Faulkner</li>
+          <li style={{ listStyleType: "none" }}>Makenzie Yoxall</li>
+          <li style={{ listStyleType: "none" }}>Raphael John</li>
+        </ul>
       </div>
       <div>
-        <h2>Query the Chain</h2>  
-        <button onClick={queryChain} className={elementStyles.button}>Query Greeting</button>
-        <h4>Greeting on Chain: { chainGreeting }</h4>
+        <h2>Query the Attendance Chain</h2>  
+        <button onClick={queryChain} className={elementStyles.button}>Query</button>
+        <h4>Student Name(s) on Chain: { chainGreeting }</h4>
       </div>
       <hr />
       <div>
-        <h2>Mutate the Chain</h2>
+        <h2>Add Student as Absent</h2>
         {!isEmulator(network) && (
           <h4>Latest Transaction ID: <a className={elementStyles.link} onClick={() => {openExplorerLink(lastTransactionId, network)}}>{ lastTransactionId }</a></h4>
         )}
@@ -92,7 +92,7 @@ export default function Container() {
           <label>
             <input
               type='text'
-              placeholder='New Greeting'
+              placeholder='Add Student'
               value={userGreetingInput}
               onChange={e => setUserGreetingInput(e.target.value)}
               className={elementStyles.input}
