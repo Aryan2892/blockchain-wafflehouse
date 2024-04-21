@@ -61,8 +61,23 @@ export default function Container() {
 
   return (
     <div className={containerStyles.container}>
-      <h2>Query the Chain</h2>
       <div>
+        <h3>Student List:</h3>
+        <ol>
+          <li>Mohamad Häusler</li>
+          <li>Kristina Poirier</li>
+          <li>Frigg Allen</li>
+          <li>Angélique Kjær</li>
+          <li>Rayna Russo</li>
+          <li>Lynn Warren</li>
+          <li>Rolland Seymour</li>
+          <li>Kristine Faulkner</li>
+          <li>Makenzie Yoxall</li>
+          <li>Raphael John</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Query the Chain</h2>  
         <button onClick={queryChain} className={elementStyles.button}>Query Greeting</button>
         <h4>Greeting on Chain: { chainGreeting }</h4>
       </div>

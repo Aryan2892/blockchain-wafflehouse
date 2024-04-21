@@ -1,5 +1,6 @@
 .container {
   text-align: center;
   padding: 20px 0 50px 0;
-  background-color: #00EC82;
+  display: flex;  
+  gap: 50px;
 }
