@@ -1,5 +1,5 @@
 import * as fcl from '@onflow/fcl'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReadHelloWorld from '../cadence/scripts/ReadHelloWorld.cdc'
 import UpdateHelloWorld from '../cadence/transactions/UpdateHelloWorld.cdc'
 import elementStyles from '../styles/Elements.module.css'
@@ -70,12 +70,14 @@ export default function Container() {
     <div className={containerStyles.container}>
       <div className={containerStyles.spacing}>
       <h3>Student List:</h3>
-      {studentsData.map((student, index) => (
-        <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
-          <p style={{ textAlign: 'left', marginRight: '10px' }}>{student}</p>
-          <button onClick={() => copyToClipboard(student)}>Copy</button>
-        </div>
-      ))}
+      <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', gap: '5px', marginBottom: '5px' }}>
+        {studentsData.map((student, index) => (
+          <React.Fragment key={index}>
+            <p style={{ textAlign: 'left', margin: '0' }}>{student}</p>
+            <button onClick={() => copyToClipboard(student)}>Copy</button>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
       <div>
         <h2>Query the Attendance Chain</h2>  
