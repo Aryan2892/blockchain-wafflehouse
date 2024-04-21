@@ -63,7 +63,7 @@ export default function Container() {
     <div className={containerStyles.container}>
       <div>
         <h3>Student List:</h3>
-        <ol>
+        <ul>
           <li>Mohamad Häusler</li>
           <li>Kristina Poirier</li>
           <li>Frigg Allen</li>
@@ -74,7 +74,7 @@ export default function Container() {
           <li>Kristine Faulkner</li>
           <li>Makenzie Yoxall</li>
           <li>Raphael John</li>
-        </ol>
+        </ul>
       </div>
       <div>
         <h2>Query the Chain</h2>  
