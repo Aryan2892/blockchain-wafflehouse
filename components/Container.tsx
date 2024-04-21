@@ -6,6 +6,7 @@ import elementStyles from '../styles/Elements.module.css'
 import containerStyles from '../styles/Container.module.css'
 import useConfig from '../hooks/useConfig'
 import { createExplorerTransactionLink } from '../helpers/links'
+import studentsData from './students.json';
 
 export default function Container() {
   const [chainGreeting, setChainGreeting] = useState<string[]>()
@@ -16,6 +17,12 @@ export default function Container() {
 
   const isEmulator = network => network !== 'mainnet' && network !== 'testnet'
   const isSealed = statusCode => statusCode === 4 // 4: 'SEALED'
+
+  const copyToClipboard = (name: string) => {
+    navigator.clipboard.writeText(name)
+      .then(() => console.log(`Copied ${name} to clipboard`))
+      .catch(error => console.error('Error copying to clipboard:', error));
+  };
 
   useEffect(() => {
     if (lastTransactionId) {
@@ -62,18 +69,14 @@ export default function Container() {
   return (
     <div className={containerStyles.container}>
       <div className={containerStyles.spacing}>
-        <h3>Student List:</h3>
-        <p style={{ textAlign: "left" }}>Mohamad Häusler</p>
-        <p style={{ textAlign: "left" }}>Kristina Poirier</p>
-        <p style={{ textAlign: "left" }}>Frigg Allen</p>
-        <p style={{ textAlign: "left" }}>Angélique Kjær</p>
-        <p style={{ textAlign: "left" }}>Rayna Russo</p>
-        <p style={{ textAlign: "left" }}>Lynn Warren</p>
-        <p style={{ textAlign: "left" }}>Rolland Seymour</p>
-        <p style={{ textAlign: "left" }}>Kristine Faulkner</p>
-        <p style={{ textAlign: "left" }}>Makenzie Yoxall</p>
-        <p style={{ textAlign: "left" }}>Raphael John</p>
-      </div>
+      <h3>Student List:</h3>
+      {studentsData.map((student, index) => (
+        <div key={index} style={{ display: 'flex', alignItems: 'center' }}>
+          <p style={{ textAlign: 'left', marginRight: '10px' }}>{student}</p>
+          <button onClick={() => copyToClipboard(student)}>Copy</button>
+        </div>
+      ))}
+    </div>
       <div>
         <h2>Query the Attendance Chain</h2>  
         <button onClick={queryChain} className={elementStyles.button}>Query</button>
@@ -83,7 +86,7 @@ export default function Container() {
             <div key={index}>{name}</div>
           ))
         ) : (
-          <div>Loading...</div>
+          <div></div>
         )}
 
       </div>
