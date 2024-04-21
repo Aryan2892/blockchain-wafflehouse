@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Links from '../components/Links';
 import Container from '../components/Container';
 import useCurrentUser from '../hooks/useCurrentUser';
 import Footer from '../components/Footer';
