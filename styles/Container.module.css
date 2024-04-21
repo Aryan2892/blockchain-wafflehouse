@@ -4,3 +4,8 @@
   display: flex;  
   gap: 50px;
 }
+
+.spacing {
+  border: 1px solid black;
+  padding: 25px;
+}
