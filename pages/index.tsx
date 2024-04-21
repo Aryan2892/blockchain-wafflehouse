@@ -26,7 +26,9 @@ export default function Home() {
           Attendance Keeping Application
         </p>
 
-        <Links />
+        <p className={styles.description}>
+          Built on the Flow Blockchain
+        </p>
 
         {loggedIn && <Container />}
 
