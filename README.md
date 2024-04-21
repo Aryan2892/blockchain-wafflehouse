@@ -14,7 +14,7 @@ This application was developed during the April 2024 Web3Apps Hackathon hosted b
 
 -  [Credits](#credits)
 
--  [License](#license)
+-  [Architecture](#architecture)
 
 ## Features
 
@@ -28,7 +28,7 @@ Git clone the main branch from our repository.
 
 git clone https://github.com/Aryan2892/blockchain-wafflehouse.git
 
-## Running the App
+## Usage
 
 Use the package manager npm to install our app.
 (for the first run)
@@ -80,6 +80,9 @@ Whenever you need to redeploy changed contracts to Testnet while seeing the diff
 ```
 npm run dev:testnet:update
 ```
+
+Successful installation and login into the Blockchain Wafflehouse module should yield a similar UI:
+![](./assets/images/bw-screenshot.png)
 
 ## Credit 
 
