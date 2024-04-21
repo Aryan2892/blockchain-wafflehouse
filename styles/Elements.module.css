@@ -1,13 +1,15 @@
 .button {
-  padding: 8px;
-  background: #fafafa;
-  border-radius: 5px;
+  padding: 18px;
+  background: #00EC82;
+  font-size: 20px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
 .button:hover {
-  color: #00EC82;
   border-color: #00EC82;
+  background-color: #fafafa;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .input {
