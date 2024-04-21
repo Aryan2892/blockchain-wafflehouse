@@ -91,4 +91,5 @@ A lot of our inspiration came from all over the internet as we were looking for 
 
 ## Architecture
 
-This image gives a brief overview of what we have built
+The diagram below provides an overview on what we have built
+![](./docs/blockchain-Wafflehouse.png)
