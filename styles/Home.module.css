@@ -16,9 +16,10 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid ;
   justify-content: center;
   align-items: center;
+
 }
 
 .footer a {
@@ -29,7 +30,8 @@
 }
 
 .title a {
-  color: #00EC82;
+  color: var(--text-color);
+  background-color: red;
   text-decoration: none;
 }
 
@@ -40,7 +42,7 @@
 }
 
 .title {
-  margin: 0;
+  margin-top: 1em;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -57,7 +59,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: var(--primary-color);
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -88,8 +90,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #00EC82;
-  border-color: #00EC82;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .card h2 {
