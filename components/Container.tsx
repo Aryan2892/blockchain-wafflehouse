@@ -82,7 +82,7 @@ export default function Container() {
         <button onClick={queryChain} className={elementStyles.button}>Query</button>
         <h4>Student Name(s) on Chain: </h4>
         {chainGreeting ? (
-          chainGreeting.map((name, index) => (
+          chainGreeting.slice().reverse().map((name, index) => (
             <div key={index}>{name}</div>
           ))
         ) : (
