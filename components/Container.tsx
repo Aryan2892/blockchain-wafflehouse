@@ -61,20 +61,18 @@ export default function Container() {
 
   return (
     <div className={containerStyles.container}>
-      <div>
+      <div className={containerStyles.spacing}>
         <h3>Student List:</h3>
-        <ul style={{ textAlign: "left" }}>
-          <li style={{ listStyleType: "none" }}>Mohamad Häusler</li>
-          <li style={{ listStyleType: "none" }}>Kristina Poirier</li>
-          <li style={{ listStyleType: "none" }}>Frigg Allen</li>
-          <li style={{ listStyleType: "none" }}>Angélique Kjær</li>
-          <li style={{ listStyleType: "none" }}>Rayna Russo</li>
-          <li style={{ listStyleType: "none" }}>Lynn Warren</li>
-          <li style={{ listStyleType: "none" }}>Rolland Seymour</li>
-          <li style={{ listStyleType: "none" }}>Kristine Faulkner</li>
-          <li style={{ listStyleType: "none" }}>Makenzie Yoxall</li>
-          <li style={{ listStyleType: "none" }}>Raphael John</li>
-        </ul>
+        <p style={{ textAlign: "left" }}>Mohamad Häusler</p>
+        <p style={{ textAlign: "left" }}>Kristina Poirier</p>
+        <p style={{ textAlign: "left" }}>Frigg Allen</p>
+        <p style={{ textAlign: "left" }}>Angélique Kjær</p>
+        <p style={{ textAlign: "left" }}>Rayna Russo</p>
+        <p style={{ textAlign: "left" }}>Lynn Warren</p>
+        <p style={{ textAlign: "left" }}>Rolland Seymour</p>
+        <p style={{ textAlign: "left" }}>Kristine Faulkner</p>
+        <p style={{ textAlign: "left" }}>Makenzie Yoxall</p>
+        <p style={{ textAlign: "left" }}>Raphael John</p>
       </div>
       <div>
         <h2>Query the Attendance Chain</h2>  

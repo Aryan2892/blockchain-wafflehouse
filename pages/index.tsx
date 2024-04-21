@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Links from '../components/Links'
-import Container from '../components/Container'
-import useCurrentUser from '../hooks/useCurrentUser'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Links from '../components/Links';
+import Container from '../components/Container';
+import useCurrentUser from '../hooks/useCurrentUser';
+import Footer from '../components/Footer';
 
 export default function Home() {
-  const { loggedIn } = useCurrentUser()
+  const { loggedIn } = useCurrentUser();
 
   return (
     <div className={styles.container}>
@@ -25,10 +26,11 @@ export default function Home() {
           Attendance Keeping Application
         </p>
 
-        {loggedIn && <Container />}
-
         <Links />
 
+        {loggedIn && <Container />}
+
+        <Footer />
       </main>
     </div>
   )
